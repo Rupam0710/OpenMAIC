@@ -119,10 +119,15 @@ describe('slide edit element factories', () => {
   });
 
   test('creates a blank text box at the clicked canvas point', () => {
-    const element = createTextElementAtCanvasPoint('text-quick-add', { x: 240, y: 180 }, {
-      left: 100,
-      top: 50,
-    }, 2);
+    const element = createTextElementAtCanvasPoint(
+      'text-quick-add',
+      { x: 240, y: 180 },
+      {
+        left: 100,
+        top: 50,
+      },
+      2,
+    );
 
     expect(element).toMatchObject({
       id: 'text-quick-add',
