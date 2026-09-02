@@ -173,6 +173,10 @@ export function Canvas(_props: CanvasProps) {
     if (activeElementIdList.length || creatingElement || creatingCustomShape) return;
     if (!viewportRef.current) return;
 
+    // Only treat double-click as blank-area when the event target isn't inside an element node
+    const target = e.target as HTMLElement;
+    if (target.closest('.editable-element')) return;
+
     const viewportRect = viewportRef.current.getBoundingClientRect();
     const textElement = createTextElementAtCanvasPoint(
       createElementId('text'),
