@@ -48,7 +48,9 @@ test.describe('Slide editor double-click text insertion (#1310)', () => {
     await page.waitForTimeout(500); // Wait for slide editor to render
 
     // Get the canvas viewport
-    const canvas = page.locator('[data-testid="canvas-viewport"], .canvas-viewport, [class*="canvas"]').first();
+    const canvas = page
+      .locator('[data-testid="canvas-viewport"], .canvas-viewport, [class*="canvas"]')
+      .first();
     await expect(canvas).toBeVisible({ timeout: 10_000 });
 
     // Get initial count of editable elements
