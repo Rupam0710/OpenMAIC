@@ -1,5 +1,5 @@
 import { describe, expect, test, vi } from 'vitest';
-import { createTextElementAtCanvasPoint, createDefaultTextElement } from '@/lib/edit/slide-edit-elements';
+import { createTextElementAtCanvasPoint } from '@/lib/edit/slide-edit-elements';
 
 describe('Canvas double-click handler', () => {
   test('does not insert text when double-clicking a locked element', () => {
